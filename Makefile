@@ -2,7 +2,7 @@ CC=clang
 CFLAGS=-Wall -Wextra -Werror -std=c11 -pedantic -Wno-unused-parameter
 
 TARGET=client
-OBJECTS=client.o kvs.o kvs_base.o kvs_clock.o kvs_fifo.o kvs_lru.o
+OBJECTS=client.o kvs.o kvs_base.o kvs_clock.o kvs_fifo.o kvs_lru.o kvlist.o
 
 .PHONY: all
 all: $(TARGET)
