@@ -1,67 +1,65 @@
-Key-Value Store (KVS) Cache System
-==================================
+🚀 Key-Value Store (KVS) Cache System 🔥
+⚡ Overview
+This project implements a high-performance Key-Value Store (KVS) Cache System that supports multiple caching algorithms. It efficiently manages key-value pairs in memory while reducing disk access. The system features FIFO, LRU, and CLOCK caching policies to optimize retrieval speed. ⚡
 
-### Overview
+🎯 Features
+✅ Multiple Caching Policies: FIFO (First-In-First-Out), LRU (Least Recently Used), and CLOCK (Approximate LRU).
+✅ Blazing-Fast In-Memory Storage: Drastically reduces retrieval times. 🏎️
+✅ Disk-Backed Persistence: Stores evicted data for retrieval later. 💾
+✅ Performance Metrics: Tracks cache hit/miss rates to analyze efficiency. 📊
 
-This project implements a **Key-Value Store (KVS) Cache System** that supports multiple caching algorithms. It efficiently manages key-value pairs in memory while minimizing access to disk storage. The cache implements **FIFO, LRU, and CLOCK algorithms** to optimize retrieval efficiency.
+🔍 How It Works
+📥 Data Operations:
+SET key value ➡️ Inserts or updates a key-value pair.
+GET key ➡️ Retrieves the value associated with a key.
+🔄 Evictions occur when the cache is full, following the selected caching strategy.
+📝 Input Format (input.txt)
+Commands should follow this structure:
 
-### Features:
+`SET 7 New 7`  
+`SET 6 New 6`  
+`GET 1`  
+`SET: Adds/updates keys.`  
+`GET: Retrieves stored keys.`  
 
--   **Multiple caching policies:** FIFO (First-In-First-Out), LRU (Least Recently Used), and CLOCK (approximate LRU).
--   **In-memory storage** to speed up data retrieval.
--   **Disk-backed persistence** when data is evicted from the cache.
--   **Performance metrics tracking** for cache hit/miss rates.
+📤 Output Format (output.txt)
+Successful retrievals and cache statistics appear in the output:
 
-### How It Works
+`Original 1`  
+`Original 5`  
+`GET COUNT (CACHE): 2`  
+`GET COUNT (DISK): 2`  
+`GET CACHE HIT RATE: 0.00%`  
+`SET COUNT (CACHE): 4`  
+`SET COUNT (DISK): 3`  
+`SET CACHE HIT RATE: 25.00%`  
 
-1.  **Data Operations:**
+📊 Monitors cache efficiency, hit rates, and memory performance!
 
-    -   `SET key value`: Inserts or updates a key-value pair.
-    -   `GET key`: Retrieves the value associated with a key.
-    -   Evictions happen when the cache reaches its limit, following the selected caching policy.
-2.  **Input Format (`input.txt`)**
+🏗️ Algorithms Implemented
+🔄 FIFO (First-In-First-Out)
+Oldest item is removed first when the cache reaches its limit.
+Best for: Workloads where the oldest data is least useful.
+🏃 LRU (Least Recently Used)
+Evicts the least recently accessed item first.
+Best for: Scenarios where recent data is more frequently used.
+🕰️ CLOCK (Approximate LRU)
+Uses a reference bit mechanism to determine eviction.
+Best for: When LRU is too expensive but a similar effect is needed.
+⚙️ Compilation & Usage
+📌 Compile the project:
 
-    -   Commands should be formatted as follows:
+`make`  
+📌 Run the executable:
 
-        `SET 7 New 7`  
-        `SET 6 New 6`  
-        `GET 1`
+`./kvs < input.txt > output.txt`  
 
-    -   Supports `SET` (to add/update keys) and `GET` (to retrieve keys).
-3.  **Output Format (`output.txt`)**
+📌 Analyze the output:
 
-    -   Outputs retrieved values or statistics:
+Open output.txt for results & performance metrics. 📊
+🚀 Why Use This KVS Cache?
+⚡ Boosts retrieval speed with intelligent caching.
+📉 Minimizes expensive disk accesses with in-memory storage.
+📊 Tracks performance metrics to optimize caching policies.
 
-        `Original 1`  
-
-        Original 5`  
-
-        `GET COUNT (CACHE): 2`  
-        `GET COUNT (DISK): 2`  
-        `GET CACHE HIT RATE: 0.00%`  
-        `SET COUNT (CACHE): 4`  
-        `SET COUNT (DISK): 3`  
-        `SET CACHE HIT RATE: 25.00%`  
-
-### Algorithms Implemented:
-
-1.  **FIFO (First-In-First-Out)**
-    -   Oldest item is removed when the cache is full.
-2.  **LRU (Least Recently Used)**
-    -   Least recently accessed item is evicted first.
-3.  **CLOCK (Approximate LRU)**
-    -   Uses a reference bit mechanism to decide eviction.
-
-### Compilation & Usage:
-
-1.  **Compile the project:**
-
-
-    `make`
-
-2.  **Run the executable:**
-
-    `./kvs < input.txt > output.txt`
-
-3.  **Analyze the output:**
-    -   Check `output.txt` for results.
+Perfect for high-performance applications that require fast, efficient, and intelligent data caching! 🔥
